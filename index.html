@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pabling's Barbershop</title>
+  <link rel="icon" type="image/x-icon" href="PBfavicon.ico">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #1b62b3;
+    }
+
+    header {
+      background-color: #1b62b3;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: whitesmoke;
+    }
+
+    .hero {
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: url('https://images.unsplash.com/photo-1519741491154-14c0f0df3d7e') center/cover no-repeat;
+      color: black;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px whitesmoke;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 3px whitesmoke;
+    }
+
+    .hero-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  background-color: white;
+  padding: 100px;
+  border-radius: 10px;
+}
+
+.hero-text {
+  max-width: 500px;
+  text-align: left;
+}
+
+.hero-image img {
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #1338be;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #1338be;
+}
+
+
+    footer {
+      background-color: #1b62b3;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 14px;
+
+      
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Pabling's Barbershop</div>
+    <nav>
+      <a href="login.php">Log In</a>
+      <a href="signup.php">Register</a>
+      <a href="Billings.html">Online Payment</a>
+      <a href="chatbot.html">Haircut Recommendation</a>
+    
+    </nav>
+  </header>
+
+  <section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Where Tradition Meets Style</h1>
+      <p>Experience expert grooming with a modern twist. Book your appointment now and feel the difference.</p>
+      <a href="login.php" class="btn">Book Now</a>
+    </div>
+    <div class="hero-image">
+      <img src="../pabling/homepage.jpg" alt="Barbershop" />
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Pabling's Barbershop. All rights reserved.
+  </footer>
+
+</body>
+</html>
