@@ -1,0 +1,27 @@
+# Enable rewrite engine
+RewriteEngine On
+
+# Set default page
+DirectoryIndex index.html
+
+# Security headers
+Header always set X-Frame-Options DENY
+Header always set X-Content-Type-Options nosniff
+Header always set X-XSS-Protection "1; mode=block"
+
+# Cache static assets
+<FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg)$">
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+</FilesMatch>
+
+# Protect sensitive files
+<Files ~ "^(composer\.json|\.env|\.git)">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Handle PHP files
+<FilesMatch "\.php$">
+    SetHandler application/x-httpd-php
+</FilesMatch>
