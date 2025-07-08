@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Chatbot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e2f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .chat-container {
+      width: 700px;
+      background-color: black;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #fbfbfb;
+    }
+
+    #chatbox {
+      height: 450px;
+      overflow-y: auto;
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      background-color: #fafafa;
+    }
+
+    p {
+      margin: 5px 0;
+    }
+
+    .user {
+      color: #1b62b3;
+    }
+
+    .mrpabs {
+      color: black;
+      text-align: justify;
+    }
+
+    input[type="text"] {
+      width: 75%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-right: 5px;
+    }
+
+    button {
+      padding: 10px 56px;
+      background-color: #1338be;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1338be;
+    }
+  </style>
+</head>
+<body style="background-image: url('chatbot.png'); background-size: cover; background-repeat: no-repeat;"></body>
+  <div class="chat-container">
+    <h2>Pablings Barbershop</h2>
+    <div id="chatbox"></div>
+    <input id="userInput" type="text" placeholder="Type hi or hello to start..." />
+    <button onclick="talk()">Send</button>
+  </div>
+
+  <script>
+    function talk() {
+      const input = document.getElementById("userInput").value.trim().toLowerCase();
+      if (!input) return;
+
+      let response = "I don't understand.";
+
+      if (input.includes("hello")) {
+        response = "Hi there! I am Mr. Pabs, your virtual assistant. To know more about Pablings Barbershop, type: about, haircuts or service.";
+      } else if (input.includes("hi")) {
+        response = "Hello there! I am Mr. Pabs, your virtual assistant. To know more about Pablings Barbershop, type: about, haircuts or service.";
+      } else if (input.includes("about")) {
+
+        //Haircut
+
+        response = "Pablings Barbershop is a well-known barbershop nationwide for its excellence in haircut and hairstyle services. The store is located in Masinag, Antipolo City and it opens from 9:00am to 5:00pm everyday.";
+      } else if (input.includes("haircuts")) {
+        response = "Pablings Babrbershop offers creative cut. Here are the haircuts offered under the creative cut category: Curtain, Wolf, Pompadour, Edgar, and Mullet. ";
+      } else if (input.includes("curtain")) {
+        response = `The curtain cut is a hairstyle characterized by long, side-swept bangs that fall on either side of the face, creating a soft, curtain-like effect. Suitable for people with various hair type lengths and face shape.<br>
+        <img src="curtain.png" alt="Curtain haircut" style="width:100%; max-width:300px; margin-top:10px; border-radius:5px;">`;
+      } else if (input.includes("wolf")) {
+        response = `The wolf cut is a hairstyle characterized by short, choppy layers on top and longer layers that fall to the sides and back that creates a wild, voluminous, and effortless vibe. Particularly well-suited for men with oval, square, and heart-shaped faces. <br>
+        <img src="wolf.png" alt="Wolf haircut" style="width:100%; max-width:300px; margin-top:10px; border-radius:5px;">`;
+      } else if (input.includes("pompadour")) {
+        response = `The pompadour cut also known as curtain bangs, can be a versatile hairstyle for men and are generally suitable for many face shapes, particularly those with square, diamond, heart, or oval faces. <br>
+        <img src="pompadour.png" alt="Pompadour haircut" style="width:100%; max-width:300px; margin-top:10px; border-radius:5px;">`;
+      } else if (input.includes("edgar")) {
+        response = `The Edgar haircut, known for its blunt fringe and bowl-like shape, is often best suited for men with angular or narrow faces and those with pronounced features.  <br>
+        <img src="edgar.png" alt="Edgar haircut" style="width:100%; max-width:300px; margin-top:10px; border-radius:5px;">`;
+      } else if (input.includes("mullet")) {
+        response = `A mullet haircut can be a stylish option for men of various face shapes, the length of the hair at the back can also help to elongate and balance out rounder face shapes.<br>
+        <img src="mullet.png" alt="Mullet haircut" style="width:100%; max-width:300px; margin-top:10px; border-radius:5px;">`;
+
+        //services
+      } else if (input.includes("services")) {
+        response = "Here are the following services offered by Pablings Barbershop: Tabas Pablings, Pablings Espesyal, Ginoong Pabian #1, Ginoong Pabian #2, and Pablito Gwapito. ";
+      } else if (input.includes("tabas pablings")) {
+        response = "The Tabas Pablings is a regular haircut that is generally suitable for various face shape and hair lengths.";
+      } else if (input.includes("pablings espesyal")) {
+        response = "Pablings Espesyal is a service that offers a regular haircut and shampoo.";
+      } else if (input.includes("tabas pablings")) {
+        response = "The Tabas Pablings is a regular haircut that is generally suitable for various face shape and hair lengths.";
+      } else if (input.includes("ginoong pabian #1")) {
+        response = "The Ginoong Pabian #1 is a service that offers a combination of regular haircut and styling a person's hair, including shaving or trimming facial hair.";
+      } else if (input.includes("ginoong pabian #2")) {
+        response = "The Ginoong Pabian #2 is a service that offers a combination of regular haircut and styling a person's hair, and a half body massage including the back, neck, and shoulders.";
+      } else if (input.includes("pablito gwapito")) {
+        response = "The Pablito Gwapito is a service that offers a combination of regular haircut and styling a person's hair, and a charcoal face mask.";
+      }
+
+      const chatbox = document.getElementById("chatbox");
+      chatbox.innerHTML += `<p class="user"><strong>You:</strong> ${input}</p>`;
+      chatbox.innerHTML += `<p class="mrpabs"><strong>Mr. Pabs:</strong> ${response}</p>`;
+      document.getElementById("userInput").value = "";
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+  </script>
+</body>
+</html>
